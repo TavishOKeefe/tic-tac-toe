@@ -2,24 +2,24 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
 import { HashRouter } from 'react-router-dom';
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
-import rootReducer from './reducers/index';
+// import { createStore } from 'redux';
+// import { Provider } from 'react-redux';
+// import rootReducer from './reducers/index';
+import { AppContainer } from 'react-hot-loader';
 
-const store = createStore(rootReducer);
-// 
+// const store = createStore(rootReducer);
+//
 // let unsubscribe = store.subscribe(() =>
 //   console.log(store.getState())
 // );
 
 const render = (Component) => {
   ReactDOM.render(
-
-    <HashRouter>
-      <Provider store={store}>
+    <AppContainer>
+      <HashRouter>
         <Component/>
-      </Provider>
-    </HashRouter>
+      </HashRouter>
+    </AppContainer>
     ,
     document.getElementById('react-app-root')
   );
